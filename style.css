@@ -12,4 +12,50 @@ html {
 body{
   background-color: #000;
   background-image: url('./assets/background.jpg');
+  margin : 0;
+  padding : 96px 0;
+}
+
+/********* RIVERA *********/
+#sylvia-rivera{
+  text-align : right;
+  display : flex;
+  justify-content : right;
+  align-items : center;
+}
+
+.shouting-text{
+  font-family : "Protest Guerrilla";
+  color : #fff;
+  font-size : 48px;
+  display : inline-block;
+}
+/********* DOGS *********/
+#dogs{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 96px 0;
+}
+
+#dog-1, #dog-3{
+  transition: all ease-in-out 200ms;
+  animation: oscillate 2s infinite;
+}
+
+#dog-2{
+  transition: all ease-in-out 200ms;
+  animation: oscillateOdd 2s infinite;
+  }
+
+@keyframes oscillate {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(30deg); }
+  100% { transform: rotate(0); }
+}
+@keyframes oscillateOdd {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(-30deg); }
+  100% { transform: rotate(0); }
 }
