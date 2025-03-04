@@ -13,7 +13,16 @@ body{
   background-color: #000;
   background-image: url('./assets/background.jpg');
   margin : 0;
-  padding : 96px 0;
+  padding : 0;
+}
+
+
+/********* CURTAINS *********/
+#curtains{
+  display: flex;
+  align-items: center;
+  transition: all ease-out 800ms;
+  width: 100vw;
 }
 
 /********* RIVERA *********/
@@ -22,13 +31,16 @@ body{
   display : flex;
   justify-content : right;
   align-items : center;
+  transition: translate ease-in 200ms;
 }
 
 .shouting-text{
   font-family : "Protest Guerrilla";
   color : #fff;
-  font-size : 48px;
+  font-size : 82px;
   display : inline-block;
+  position: absolute;
+  right: 0%;
 }
 /********* DOGS *********/
 #dogs{
@@ -39,7 +51,12 @@ body{
   padding: 96px 0;
 }
 
-#dog-1, #dog-3{
+#dog-1{
+  transition: all ease-in-out 200ms;
+  animation: oscillateDog1 2s infinite;
+}
+
+#dog-3{
   transition: all ease-in-out 200ms;
   animation: oscillate 2s infinite;
 }
@@ -52,6 +69,11 @@ body{
 @keyframes oscillate {
   0% { transform: rotate(0); }
   50% { transform: rotate(30deg); }
+  100% { transform: rotate(0); }
+}
+@keyframes oscillateDog1 {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(-25deg); }
   100% { transform: rotate(0); }
 }
 @keyframes oscillateOdd {
