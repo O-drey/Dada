@@ -5,13 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dada Drag</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <div id="curtains">
       <img id="curtain-left" src="./assets/imgs/curtain-left.png" alt="" />
       <img id="curtain-right" src="./assets/imgs/curtain-right.png" alt="" />
     </div>
-    <div id="sylvia-rivera"></div>
+    <div id="reading" style="display: flex; padding: 42px 0">
+      <div
+        class="queen-yellow"
+        style="height: 500px; width: 600px; aspect-ratio: 859/750"
+      >
+        <img
+          src="./assets/imgs/reading-yellow-queen.png"
+          alt=""
+          style="width: 100%; height: 100%"
+        />
+      </div>
+      <div
+        class="queen-message"
+        style="
+          height: 80%;
+          width: 100%;
+          background-image: url('./assets/imgs/yelling-mouths-group.png');
+          background-repeat: no-repeat;
+          background-clip: padding-box;
+          background-position: right;
+        "
+      >
+        <!-- <div style="z-index: -10">
+          <img
+            src="./assets/imgs/yelling-mouths-group.png"
+            alt=""
+            style="width: 100%; height: 100%"
+          />
+        </div> -->
+        <div class="message" style="display: inline-flex">
+          <div
+            style="
+              display: block;
+              text-align: left;
+              font-family: 'Impact';
+              text-transform: capitalize;
+              font-size: 94px;
+              /* font-size: 64px; ----> à voir */
+            "
+          >
+            <h1 style="display: inline-block">Hell hath</h1>
+            <div style="display: inline-block; margin-left: 12px">
+              <img src="./assets/imgs/no-fury.png" alt="" />
+            </div>
+            <h2 style="text-align: left">like a scorned queen.</h2>
+          </div>
+        </div>
+        <div style="text-align: right">
+          <img src="./assets/imgs/reading-pink-queen.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div id="johnson-rivera">
+      <div id="thank-you" style="display: inline-flex">
+        <img src="./assets/imgs/star.png" alt="" class="stars-decorator" />
+        <!-- HOVER : audio-applause -->
+        <h3
+          style="
+            font-family: 'Impact';
+            text-transform: capitalize;
+            font-size: 64px;
+          "
+        >
+          Thank you Marsha and Sylvia!
+        </h3>
+        <img src="./assets/imgs/star-2.png" alt="" class="stars-decorator" />
+      </div>
+      <div id="johnson-rivera-imgs">
+        <img src="/assets/imgs/marsha-sylvia-imgs.png" alt="" />
+      </div>
+    </div>
+    <div id="party">
+      <img
+        src="./assets/imgs/megaphone.png"
+        alt=""
+        style="transform: rotate(55deg)"
+      />
+      <div class="message" style="display: inline-flex">
+        <div
+          style="
+            display: block;
+            text-align: left;
+            font-family: 'Impact';
+            text-transform: capitalize;
+            font-size: 94px;
+            /* font-size: 64px; ----> à voir */
+          "
+        >
+          <h4 style="display: inline-block">Fight with</h4>
+          <div style="display: inline-block; margin-left: 12px">
+            <img src="./assets/imgs/joy.png" alt="" />
+          </div>
+          <h5 style="text-align: left">'coz we will never go!</h5>
+        </div>
+      </div>
+      <img src="" alt="" />
+    </div>
     <div id="dogs"></div>
 
     <script src="index.js"></script>

@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
 
+@font-face {
+  font-family: 'Impact Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Impact Regular'), url('impact.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Impact Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Impact Regular'), url('unicode.impact.woff') format('woff');
+}
+  
+@font-face {
+  font-family: 'Impacted Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Impacted Regular'), url('Impacted.woff') format('woff');
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -16,7 +37,6 @@ body{
   padding : 0;
 }
 
-
 /********* CURTAINS *********/
 #curtains{
   display: flex;
@@ -32,6 +52,13 @@ body{
   justify-content : right;
   align-items : center;
   transition: translate ease-in 200ms;
+}
+
+.fury-msg, .thank-you-msg{}
+
+.stars-decorator{
+  width: 64px;
+  height: 64px;
 }
 
 .shouting-text{

@@ -1,9 +1,9 @@
-const divImgRivera = document.getElementById("sylvia-rivera")
+const divImgRivera = document.getElementById("party")
 const imgRivera = new Image()
 const audioRivera = new Audio()
 audioRivera.src =
   "./assets/sounds/sylvia-rivera-y-all-better-quiet-down-1973.wav"
-imgRivera.src = "./assets/imgs/sylviarivera.png"
+imgRivera.src = "./assets/imgs/party-queens.png"
 imgRivera.title = "Sylvia Rivera, 1973"
 
 // DOGS
@@ -17,9 +17,7 @@ const imgDogs = [
   "./assets/imgs/harring-dog-yellow.png",
 ]
 
-setTimeout(() => {
-  divImgRivera.appendChild(imgRivera)
-}, 3000)
+divImgRivera.appendChild(imgRivera)
 
 const observeDogs = () => {
   const observer = new IntersectionObserver(
@@ -52,7 +50,7 @@ const observeDogs = () => {
   )
 
   // Applique l'observer à chaque image
-  document.querySelectorAll("#sylvia-rivera").forEach((img) => {
+  document.querySelectorAll("#party").forEach((img) => {
     observer.observe(img)
   })
 }
@@ -86,7 +84,7 @@ const observeRivera = () => {
   )
 
   // Applique l'observer à chaque image
-  document.querySelectorAll("#sylvia-rivera").forEach((img) => {
+  document.querySelectorAll("#party").forEach((img) => {
     observer.observe(img)
   })
 }
