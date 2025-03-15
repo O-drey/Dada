@@ -1,0 +1,23 @@
+/********* MARSHA & SYLVIA *********/
+#thank-you{
+  display: inline-flex;
+}
+
+.stars-decorator{
+  width: 64px;
+  height: 64px;
+}
+
+.stars-decorator~h3{
+  font-family: 'Impact';
+  text-transform: capitalize;
+  font-size: 64px;    
+}
+
+#johnson-rivera-img{
+  width: 100%;
+
+  img{
+    width: 100%;
+  }
+}

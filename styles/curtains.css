@@ -1,0 +1,7 @@
+/********* CURTAINS *********/
+#curtains{
+  display: flex;
+  align-items: center;
+  transition: all ease-out 800ms;
+  width: 100vw;
+}

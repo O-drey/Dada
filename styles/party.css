@@ -1,0 +1,43 @@
+/********* PARTY *********/
+#party{
+  transition: translate ease-in 200ms;
+}
+
+.shouting-text{
+  font-family : "Protest Guerrilla";
+  color : #fff;
+  font-size : 82px;
+  display : inline-block;
+  position: absolute;
+  right: 0%;
+}
+
+#party > img:first-of-type{
+  transform: rotate(55deg);
+}
+
+.message-party{
+  display: inline-flex;
+}
+
+.message-content-party{
+  display: block;
+  text-align: left;
+  font-family: 'Impact';
+  text-transform: capitalize;
+  font-size: 94px; /* font-size: 64px; ----> à voir */
+  text-align: center;
+  
+  h4{
+    display: inline-block;
+  }
+
+  .message-content-container-img{
+    display: inline-block; 
+    margin-left: 12px;
+  }
+}
+
+#party-queens{
+  width: 100%;
+}

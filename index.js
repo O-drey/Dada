@@ -1,10 +1,9 @@
 const divImgRivera = document.getElementById("party")
-const imgRivera = new Image()
+console.log(divImgRivera)
+const imgRivera = document.querySelector("img#party-queens")
 const audioRivera = new Audio()
 audioRivera.src =
   "./assets/sounds/sylvia-rivera-y-all-better-quiet-down-1973.wav"
-imgRivera.src = "./assets/imgs/party-queens.png"
-imgRivera.title = "Sylvia Rivera, 1973"
 
 // DOGS
 const divDogs = document.getElementById("dogs")
@@ -16,8 +15,6 @@ const imgDogs = [
   "./assets/imgs/harring-dog-orange.png",
   "./assets/imgs/harring-dog-yellow.png",
 ]
-
-divImgRivera.appendChild(imgRivera)
 
 const observeDogs = () => {
   const observer = new IntersectionObserver(
@@ -60,9 +57,9 @@ const observeRivera = () => {
     (entries, observer) => {
       entries.forEach((element) => {
         if (element.isIntersecting) {
-          element.target.style.visibility = "visible"
+          console.log(element.intersectionRatio)
+          // element.target.style.visibility = "visible"
 
-          // setTimeout(() => {
           const text = document.createElement("p")
           text.className = "shouting-text"
           text.innerHTML = "Y'all better quiet down!"
@@ -73,7 +70,6 @@ const observeRivera = () => {
 
           audioRivera.play()
           observeDogs()
-          // }, 2500)
           if (element.intersectionRatio > 0) {
             observer.unobserve(element.target)
           }
@@ -84,12 +80,10 @@ const observeRivera = () => {
   )
 
   // Applique l'observer à chaque image
-  document.querySelectorAll("#party").forEach((img) => {
+  document.querySelectorAll("party").forEach((img) => {
     observer.observe(img)
   })
 }
-
-observeRivera()
 
 // CURTAINS
 const curtains = document.getElementById("curtains")
@@ -97,28 +91,87 @@ const curtainsImg = [
   "./assets/imgs/curtain-left.png",
   "./assets/imgs/curtain-right.png",
 ]
-
-// curtainsImg.forEach((curtain) => {
-//   curtains.appendChild(curtain)
-// })
+let curtainHadInteraction = false
 
 const curtainRight = document.getElementById("curtain-right")
 const curtainLeft = document.getElementById("curtain-left")
+
 const curtainAudio = new Audio()
 curtainAudio.src = "./assets/sounds/curtain-slide-pull-05.wav"
+
 const mouseDrag = () => {
   curtainRight.addEventListener("drag", () => {
     curtainAudio.play()
+    curtainHadInteraction = true
   })
   curtainLeft.addEventListener("drag", () => {
     curtainAudio.play()
+    curtainHadInteraction = true
   })
   curtainLeft.addEventListener("dragleave", () => {
     curtains.style.visibility = "hidden"
+    curtainHadInteraction = true
   })
   curtainRight.addEventListener("dragleave", () => {
     curtains.style.visibility = "hidden"
+    curtainHadInteraction = true
   })
 }
 
 mouseDrag()
+
+const readingDiv = document.getElementById("reading")
+console.dir(readingDiv)
+const readingAudio = new Audio("./assets/sounds/sergeeo-turning-pages.wav")
+
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Enter") {
+    readingAudio.volume = 0.3
+    readingAudio.play()
+    console.log(readingAudio.currentTime)
+    setTimeout(() => readingAudio.pause(), 9000)
+  }
+})
+
+const johnsonRiveraAudio = new Audio("./assets/sounds/temawas-applause.mp3")
+const johnsonRiveraDiv = document.getElementById("johnson-rivera")
+console.dir(johnsonRiveraDiv)
+
+johnsonRiveraDiv.addEventListener("mouseover", () => {
+  johnsonRiveraAudio.play()
+  if (johnsonRiveraAudio.currentTime === 8000) {
+    johnsonRiveraAudio.pause()
+    johnsonRiveraAudio.currentTime = 0
+  }
+})
+
+const audioFootsteps = new Audio(
+  "./assets/sounds/footsteps-walking-in-high-heels-shoes-01.wav"
+)
+
+const playFootsteps = () => {
+  audioFootsteps.play()
+}
+
+if (curtainHadInteraction) {
+  setTimeout(playFootsteps(), 3000)
+  setTimeout(() => {
+    playFootsteps()
+    audioFootsteps.playbackRate = 1.5
+  }, 2500)
+  setTimeout(playFootsteps(), 1500)
+}
+
+if (curtainHadInteraction) {
+  observeRivera()
+} else {
+}
+
+const dragQueenRiotDiv = document.getElementById("riot")
+const dragQueenRiotAudio = new Audio(
+  "./assets/sounds/slogan-manif-drag-queen.mp3"
+)
+
+dragQueenRiotDiv.addEventListener("dblclick", () => {
+  dragQueenRiotAudio.play()
+})
