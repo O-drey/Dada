@@ -1,5 +1,13 @@
 /********* MARSHA & SYLVIA *********/
+#johnson-rivera{
+  padding: 42px 0 0 0;
+  background-image: url("../assets/imgs/bg-johnson-rivera.png");
+  background-repeat: no-repeat;
+  height:min-content;
+}
+
 #thank-you{
+  margin-top: -1000px;
   display: inline-flex;
 }
 

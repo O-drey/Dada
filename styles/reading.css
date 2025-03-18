@@ -2,11 +2,14 @@
 #reading{
   display: flex; 
   padding: 0 0 42px 0;
+  background-image: url("../assets/imgs/bg-reading.png");
+  background-repeat: no-repeat;
+  height: auto;
 }
 
 .queen-yellow{
-  height: 500px; 
-  width: 600px; 
+  height: 600px; 
+  width: 700px; 
   aspect-ratio: 859/750;
   
   img{
@@ -32,7 +35,7 @@
   text-align: left;
   font-family: 'Impact';
   text-transform: capitalize;
-  font-size: 94px; /* font-size: 64px; ----> à voir */    
+  font-size: 64px; /* font-size: 64px; ----> à voir */    
 }
 
 .message-content{
