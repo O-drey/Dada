@@ -2,7 +2,7 @@
 #reading{
   display: flex; 
   padding: 0 0 42px 0;
-  background-image: url("../assets/imgs/bg-reading.png");
+  background-image: url("../assets/imgs/reading-bg.svg");
   background-repeat: no-repeat;
   height: auto;
 }

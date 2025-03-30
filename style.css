@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
-@import url("./styles/curtains.css");
+@import url("./styles/drag-name.css");
 @import url("./styles/reading.css");
 @import url("./styles/johnson-rivera.css");
 @import url("./styles/party.css");
 @import url("./styles/dogs.css");
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 
 @font-face {
   font-family: 'Impact Regular';
@@ -26,6 +27,7 @@
   src: local('Impacted Regular'), url('Impacted.woff') format('woff');
 }
 
+
 *{
   margin: 0;
   padding: 0;
@@ -37,4 +39,10 @@ html {
 
 #reading, #johnson-rivera, #riot, #forbidden-drag, #party{
   padding-top: 110px;
+}
+
+body{
+  background-image: url("./assets/imgs/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

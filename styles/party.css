@@ -1,6 +1,6 @@
 /********* PARTY *********/
 #party{
-  transition: translate ease-in 200ms;
+  transition: all ease-in 400ms;
 }
 
 .shouting-text{
@@ -17,7 +17,7 @@
 }
 
 .message-party{
-  display: inline-flex;
+  /* display: inline-flex; */
 }
 
 .message-content-party{

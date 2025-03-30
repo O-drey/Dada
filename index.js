@@ -1,14 +1,4 @@
-// CURTAINS
-const curtains = document.getElementById("curtains")
-const curtainsImg = [
-  "./assets/imgs/curtain-left.png",
-  "./assets/imgs/curtain-right.png",
-]
-let curtainHadInteraction = false
-
-const curtainRight = document.getElementById("curtain-right")
-const curtainLeft = document.getElementById("curtain-left")
-const curtainAudio = new Audio("./assets/sounds/curtain-slide-pull-05.wav")
+// DRAG NAME
 
 const nameDragQueenDiv = document.getElementById("curtain")
 const nameDragQueenAudio = new Audio("./assets/sounds/enter-name-flipper.wav")
@@ -16,26 +6,15 @@ const nameDragQueenAudioSubmit = new Audio(
   "./assets/sounds/enter-name-flipper-laser.wav"
 )
 
-const mouseDrag = () => {
-  curtainRight.addEventListener("drag", () => {
-    curtainAudio.play()
-    curtainHadInteraction = true
-  })
-  curtainLeft.addEventListener("drag", () => {
-    curtainAudio.play()
-    curtainHadInteraction = true
-  })
-  curtainLeft.addEventListener("dragleave", () => {
-    curtains.style.visibility = "hidden"
-    curtainHadInteraction = true
-  })
-  curtainRight.addEventListener("dragleave", () => {
-    curtains.style.visibility = "hidden"
-    curtainHadInteraction = true
-  })
-}
+const btnDragName = document.getElementById("drag-name-btn")
+const dragNameSpan = document.getElementById("drag-name-result")
+console.log(btnDragName)
 
-mouseDrag()
+const generateDragName = () => {
+  const name = "fdfjdjfod"
+  dragNameSpan.textContent = name
+}
+btnDragName.addEventListener("click", generateDragName)
 
 //READING
 const readingDiv = document.getElementById("reading")
@@ -103,10 +82,36 @@ const audioParty = new Audio()
 audioParty.src =
   "./assets/sounds/sylvia-rivera-y-all-better-quiet-down-1973.wav"
 
+// CLOCK ROTATION
+
+const partyClock = document.getElementById("party-clock")
+partyClock.addEventListener("drag", () => {
+  divImgParty.style.backgroundImage =
+    "linear-gradient(rgba(255,255,255,0), rgba(255, 255, 255, 0)), url('./assets/imgs/party.png')"
+  partyClock.style.animation = "rotate"
+
+  // const keyFrames = document.createElement("style")
+
+  // keyFrames.innerHTML = `
+  // @keyframes party-clock {
+  //   from {
+  //     transform: rotate(0deg);
+  //   }
+  //   to {
+  //     transform: rotate(360deg);
+  //   }
+  // }
+
+  // #party-joy-clock {
+  //   animation: party-clock 1s ease infinite;
+  // }
+  // `
+  // partyClock.appendChild(keyFrames)
+})
+
 // DOGS
 const divDogs = document.getElementById("dogs")
-const audioDogs = new Audio()
-audioDogs.src = "./assets/sounds/dog-barking-02.wav"
+const audioDogs = new Audio("./assets/sounds/dog-barking-02.wav")
 const imgDogs = [
   "./assets/imgs/harring-dog-red.png",
   "./assets/imgs/harring-dog-green.png",

@@ -1,0 +1,35 @@
+/********* DRAG NAME *********/
+#drag-name{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/imgs/drag-name-bg-2.svg');
+  height: 127vh;
+}
+
+#drag-name-btn{
+  background-image: url('../assets/imgs/drag-name-btn-bg.svg');
+  background-repeat: no-repeat;
+  border: none; 
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 40px;
+  font-family: 'DM Serif Text';
+  font-style: normal;
+  font-weight: normal;
+  color: #fff;
+  padding: 10px 54px;
+  border-radius: 20px;
+}
+#drag-name-panel{
+  border-radius: 16px;
+  padding: 16px;
+  border: 4px solid #F0829E;
+  background-color: #fff;
+  font-size: 28px;
+  /* width: 100%; */
+  height: 32px;
+}
