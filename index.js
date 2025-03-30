@@ -31,27 +31,26 @@ document.addEventListener("keydown", (e) => {
 })
 
 //JOHNSON-RIVERA
-const audioFootsteps = new Audio(
-  "./assets/sounds/footsteps-walking-in-high-heels-shoes-01.wav"
-)
 
 const playFootsteps = () => {
+  //On crée l'audio des pas.
+  const audioFootsteps = new Audio(
+    "./assets/sounds/footsteps-walking-in-high-heels-shoes-01.wav"
+  )
+  //on joue l'audio
   audioFootsteps.play()
 }
 
+//On sélectionne l'image qui est dans la div qui a l'id #
 const johnsonRivera = document.querySelector("#johnson-rivera-img img")
 console.log("johnsonRivera :", johnsonRivera)
 
+//on attache un évènement survol à l'image
 johnsonRivera.addEventListener("mouseover", () => {
-  setTimeout(playFootsteps(), 0)
-  setTimeout(() => {
-    playFootsteps()
-    audioFootsteps.playbackRate = 1.5
-  }, 1500)
-  setTimeout(() => {
-    playFootsteps()
-    audioFootsteps.playbackRate = 2
-  }, 2500)
+  //lorsque l'image est survolée, l'audio est joué en décalage. Pourquoi le créer à chaque appel de la fonction ? Parce qu'un audio ne peut pas se rejouer en décalage lorsqu'il est déjà en cours de lecture.
+  setTimeout(playFootsteps, 0) //on appelle la référence de la fonciton et pas la fonction directemetn sinon les audios se lancent sans attendre le timeout.
+  setTimeout(playFootsteps, 2000)
+  setTimeout(playFootsteps, 4000)
 })
 
 //RIOT
@@ -65,9 +64,9 @@ dragQueenRiotDiv.addEventListener("dblclick", () => {
 })
 
 //FORBIDDEN DRAG
-const forbiddenQueenRiotDiv = document.getElementById("riot")
+const forbiddenQueenRiotDiv = document.getElementById("forbidden-drag")
 const forbiddenQueenRiotAudio = new Audio(
-  "https://youtu.be/k1-TrAvp_xs?si=AoCcB-ihlUJc22NN&t=11"
+  "./assets/sounds/mozart-lacrimosa.wav"
 )
 
 forbiddenQueenRiotDiv.addEventListener("dblclick", () => {
@@ -78,9 +77,10 @@ forbiddenQueenRiotDiv.addEventListener("dblclick", () => {
 const divImgParty = document.getElementById("party")
 console.log(divImgParty)
 const imgParty = document.querySelector("img#party-queens")
-const audioParty = new Audio()
-audioParty.src =
+const audioParty = new Audio("./assets/sounds/party-music.mp3")
+const audioSylvia = new Audio(
   "./assets/sounds/sylvia-rivera-y-all-better-quiet-down-1973.wav"
+)
 
 // CLOCK ROTATION
 
@@ -89,6 +89,12 @@ partyClock.addEventListener("drag", () => {
   divImgParty.style.backgroundImage =
     "linear-gradient(rgba(255,255,255,0), rgba(255, 255, 255, 0)), url('./assets/imgs/party.png')"
   partyClock.style.animation = "rotate"
+  
+  setInterval(() => {
+    audioParty.volume = 0
+    audioParty.volume += 0.1
+  }, 1500)
+  audioParty.play()
 
   // const keyFrames = document.createElement("style")
 
