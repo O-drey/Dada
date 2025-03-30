@@ -85,16 +85,25 @@ const audioSylvia = new Audio(
 // CLOCK ROTATION
 
 const partyClock = document.getElementById("party-clock")
-partyClock.addEventListener("drag", () => {
+partyClock.addEventListener("dragend", () => {
+  //dès qu'on relache l'horloge au drag le son se lance et les images apparaissent en fond.
   divImgParty.style.backgroundImage =
     "linear-gradient(rgba(255,255,255,0), rgba(255, 255, 255, 0)), url('./assets/imgs/party.png')"
   partyClock.style.animation = "rotate"
-  
-  setInterval(() => {
-    audioParty.volume = 0
-    audioParty.volume += 0.1
-  }, 1500)
-  audioParty.play()
+
+  audioParty.volume = 0.2 // on initialise le son à 20%
+  audioParty.play() //on joue la musique dès que le drag prend fin
+
+  let volume = 0.2 //on initialise la variable volue au même volume que le morceau pour éviter des fluctuations de volume lorsque le morceau joue.
+  const interval = setInterval(() => {
+    if (volume < 1) {
+      //tant que volume est inférieur à 1 on augmente progressivement le son
+      volume = Math.min(volume + 0.1, 1) // Augmentation progressive : Math.min pour le minimum entre 0.2 et 1. Le son augment progressivement de 10%.
+      audioParty.volume = volume //volume a une nouvelle valeur toutes les 4 secondes
+    } else {
+      clearInterval(interval) // l'intervalle s'arrête dès que le volume maximum est atteint.
+    }
+  }, 4000) // Le volume augmente toutes les 4 secondes.
 
   // const keyFrames = document.createElement("style")
 
@@ -130,7 +139,7 @@ const observeDogs = () => {
     (entries) => {
       entries.forEach((element) => {
         if (element.isIntersecting) {
-          element.target.style.visibility = "visible"
+          // element.target.style.visibility = "visible"
 
           imgDogs.forEach((el, index) => {
             let img = document.createElement("img")
