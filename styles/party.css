@@ -1,6 +1,13 @@
 /********* PARTY *********/
 #party{
-  transition: all ease-in 400ms;
+  background-repeat: no-repeat; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 100%;
+  background-size: cover;
+  /* background-clip: border-box; */
 }
 
 .shouting-text{
@@ -14,30 +21,30 @@
 
 #party > img:first-of-type{
   transform: rotate(55deg);
-}
-
-.message-party{
-  /* display: inline-flex; */
+  width: 20%;
+  height: 20%;
 }
 
 .message-content-party{
   display: block;
   text-align: left;
-  font-family: 'Impact';
-  text-transform: capitalize;
-  font-size: 94px; /* font-size: 64px; ----> à voir */
-  text-align: center;
-  
-  h4{
-    display: inline-block;
-  }
-
-  .message-content-container-img{
-    display: inline-block; 
-    margin-left: 12px;
-  }
 }
+
+.message-content-container-img{
+  display: inline-block; 
+  margin-left: 12px;
+}
+
 
 #party-queens{
   width: 100%;
 }
+
+#party-clock{
+ animation: clockGoRound 200ms infinite;
+}
+@keyframes clockGoRound {
+  0%{transform: rotate(0);}
+  50%{transform: rotate(180deg);}
+  100%{transform: rotate(360deg);}
+ }

@@ -1,32 +1,28 @@
 // DRAG NAME
-
-const nameDragQueenDiv = document.getElementById("curtain")
 const nameDragQueenAudio = new Audio("./assets/sounds/enter-name-flipper.wav")
-const nameDragQueenAudioSubmit = new Audio(
-  "./assets/sounds/enter-name-flipper-laser.wav"
-)
-
 const btnDragName = document.getElementById("drag-name-btn")
 const dragNameSpan = document.getElementById("drag-name-result")
-console.log(btnDragName)
 
+//Fonction où le nom drag est généré
 const generateDragName = () => {
-  const name = "fdfjdjfod"
-  dragNameSpan.textContent = name
+  const name = "fdfjdjfod" //on génère le nom alétoirement. ==> SVETLANA, tu peux remplacer cette ligne par ton code.
+  dragNameSpan.textContent = name //il s'affiche dans la span qui a l'id #drag-name-result.
+  nameDragQueenAudio.play() // joue le son du flipper.
 }
+
+//Au click, on appelle la fonction generateDragName()
 btnDragName.addEventListener("click", generateDragName)
 
 //READING
 const readingDiv = document.getElementById("reading")
-console.dir(readingDiv)
 const readingAudio = new Audio("./assets/sounds/sergeeo-turning-pages.wav")
 
+//En appuyant sur Entrée, l'audio des pages se lance.
 document.addEventListener("keydown", (e) => {
   if (e.code === "Enter") {
-    readingAudio.volume = 0.3
+    readingAudio.volume = 0.3 //on diminue le volume à 30% avant de le jouer
     readingAudio.play()
-    console.log(readingAudio.currentTime)
-    setTimeout(() => readingAudio.pause(), 9000)
+    setTimeout(() => readingAudio.pause(), 9000) // au bout de 9 secondes, l'audio s'arrête
   }
 })
 
@@ -41,9 +37,8 @@ const playFootsteps = () => {
   audioFootsteps.play()
 }
 
-//On sélectionne l'image qui est dans la div qui a l'id #
+//On sélectionne l'image qui est dans la div qui qui est dans la div #johnson-rivera-img
 const johnsonRivera = document.querySelector("#johnson-rivera-img img")
-console.log("johnsonRivera :", johnsonRivera)
 
 //on attache un évènement survol à l'image
 johnsonRivera.addEventListener("mouseover", () => {
@@ -59,6 +54,7 @@ const dragQueenRiotAudio = new Audio(
   "./assets/sounds/slogan-manif-drag-queen.mp3"
 )
 
+// Au double-clic, l'audio de la manifestation se lance
 dragQueenRiotDiv.addEventListener("dblclick", () => {
   dragQueenRiotAudio.play()
 })
@@ -69,18 +65,15 @@ const forbiddenQueenRiotAudio = new Audio(
   "./assets/sounds/mozart-lacrimosa.wav"
 )
 
+// SVETLANA : changer le trigger par un autre de ton choix
 forbiddenQueenRiotDiv.addEventListener("dblclick", () => {
   forbiddenQueenRiotAudio.play()
 })
 
 //PARTY
 const divImgParty = document.getElementById("party")
-console.log(divImgParty)
 const imgParty = document.querySelector("img#party-queens")
 const audioParty = new Audio("./assets/sounds/party-music.mp3")
-const audioSylvia = new Audio(
-  "./assets/sounds/sylvia-rivera-y-all-better-quiet-down-1973.wav"
-)
 
 // CLOCK ROTATION
 
@@ -128,19 +121,20 @@ partyClock.addEventListener("dragend", () => {
 const divDogs = document.getElementById("dogs")
 const audioDogs = new Audio("./assets/sounds/dog-barking-02.wav")
 const imgDogs = [
-  "./assets/imgs/harring-dog-red.png",
   "./assets/imgs/harring-dog-green.png",
-  "./assets/imgs/harring-dog-blue.png",
   "./assets/imgs/harring-dog-white.png",
+  "./assets/imgs/harring-dog-red.png",
+  "./assets/imgs/harring-dog-blue.png",
 ]
+const audioSylvia = new Audio(
+  "./assets/sounds/sylvia-rivera-y-all-better-quiet-down-1973.wav"
+)
 
 const observeDogs = () => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((element) => {
         if (element.isIntersecting) {
-          // element.target.style.visibility = "visible"
-
           imgDogs.forEach((el, index) => {
             let img = document.createElement("img")
             img.src = el
@@ -152,22 +146,19 @@ const observeDogs = () => {
           audioDogs.loop = true
           audioDogs.play()
 
-          setTimeout(() => audioDogs.pause(), 4000)
-          console.log("is playing dogs barking")
+          setTimeout(() => audioSylvia.play(), 4000)
+          setTimeout(() => audioDogs.pause(), 9000)
 
           if (element.intersectionRatio > 0) {
             observer.unobserve(element.target)
-          }
+          } // On arrête d'observer après l'ajout des chiens
         }
       })
     },
-    { threshold: 1 } // Se déclenche dès que l'élément est complètement visible
+    { threshold: 0.5 } // Se déclenche dès que l'élément est complètement visible
   )
 
-  // Applique l'observer à chaque image
-  document.querySelectorAll("#party").forEach((img) => {
-    observer.observe(img)
-  })
+  observer.observe(divDogs)
 }
 
 const observeParty = () => {
@@ -175,30 +166,20 @@ const observeParty = () => {
     (entries, observer) => {
       entries.forEach((element) => {
         if (element.isIntersecting) {
-          console.log(element.intersectionRatio)
-          // element.target.style.visibility = "visible"
-
-          const text = document.createElement("p")
-          text.className = "shouting-text"
-          text.innerHTML = "Y'all better quiet down!"
-          divImgParty.appendChild(text)
-
-          text.style.rotate = "-10deg"
-          text.style.right = "20%"
-
           audioParty.play()
           observeDogs()
+
           if (element.intersectionRatio > 0) {
             observer.unobserve(element.target)
           }
         }
       })
     },
-    { threshold: 1 } // Se déclenche dès que l'élément est complètement visible
+    { threshold: 0.5 } // Se déclenche dès que l'élément est complètement visible
   )
 
   // Applique l'observer à chaque image
-  document.querySelectorAll("party").forEach((img) => {
+  document.querySelectorAll("#party").forEach((img) => {
     observer.observe(img)
   })
 }
