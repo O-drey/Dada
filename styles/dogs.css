@@ -1,0 +1,39 @@
+/********* DOGS *********/
+#dogs{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 96px 0;
+}
+
+#dog-1{
+  transition: all ease-in-out 200ms;
+  animation: oscillateDog1 2s infinite;
+}
+
+#dog-3{
+  transition: all ease-in-out 200ms;
+  animation: oscillate 2s infinite;
+}
+
+#dog-2{
+  transition: all ease-in-out 200ms;
+  animation: oscillateOdd 2s infinite;
+  }
+
+@keyframes oscillate {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(30deg); }
+  100% { transform: rotate(0); }
+}
+@keyframes oscillateDog1 {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(-25deg); }
+  100% { transform: rotate(0); }
+}
+@keyframes oscillateOdd {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(-30deg); }
+  100% { transform: rotate(0); }
+}
