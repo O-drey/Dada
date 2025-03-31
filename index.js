@@ -9,7 +9,7 @@ const generateDragName = () => {
   dragNameSpan.textContent = name //il s'affiche dans la span qui a l'id #drag-name-result.
   nameDragQueenAudio.play() // joue le son du flipper.
 }
-
+//test
 //Au click, on appelle la fonction generateDragName()
 btnDragName.addEventListener("click", generateDragName)
 
