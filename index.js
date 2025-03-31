@@ -76,7 +76,7 @@ const imgParty = document.querySelector("img#party-queens")
 const audioParty = new Audio("./assets/sounds/party-music.mp3")
 
 // CLOCK ROTATION
-
+// tada
 const partyClock = document.getElementById("party-clock")
 partyClock.addEventListener("dragend", () => {
   //dès qu'on relache l'horloge au drag le son se lance et les images apparaissent en fond.
