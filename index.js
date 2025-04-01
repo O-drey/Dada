@@ -41,10 +41,6 @@ const generateDragName = () => {
     // Play a sound effect when name is generated
     nameDragQueenAudio.play();
   };
-  //const name = "fdfjdjfod" //on génère le nom alétoirement. ==> SVETLANA, tu peux remplacer cette ligne par ton code.
-  //dragNameSpan.textContent = name //il s'affiche dans la span qui a l'id #drag-name-result.
-  //nameDragQueenAudio.play() // joue le son du flipper.
-//}
 //Au click, on appelle la fonction generateDragName()
 btnDragName.addEventListener("click", generateDragName)
 
