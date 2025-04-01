@@ -27,7 +27,51 @@
   src: local('Impacted Regular'), url('Impacted.woff') format('woff');
 }
 
+/* Main layout for the row of letters */
+.letter-row {
+  position: absolute;
+  top: 2000px; /* Adjust vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
 
+/* Common style for all letter images */
+.letter,
+.letter-swap img {
+  height: 100px;
+  width: auto;
+  position: relative;
+}
+
+/* Container for R → N swap effect */
+.letter-swap {
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+
+/* R and N images are stacked on top of each other */
+.letter-swap .original,
+.letter-swap .swap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide N by default */
+.letter-swap .swap {
+  opacity: 0;
+  pointer-events: none; /* Prevents interference with drag */
+}
+.original {
+  cursor: grab;
+}
 *{
   margin: 0;
   padding: 0;
