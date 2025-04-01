@@ -5,10 +5,46 @@ const dragNameSpan = document.getElementById("drag-name-result")
 
 //Fonction où le nom drag est généré
 const generateDragName = () => {
-  const name = "fdfjdjfod" //on génère le nom alétoirement. ==> SVETLANA, tu peux remplacer cette ligne par ton code.
-  dragNameSpan.textContent = name //il s'affiche dans la span qui a l'id #drag-name-result.
-  nameDragQueenAudio.play() // joue le son du flipper.
-}
+    // Possible titles
+    const titles = ["MISS", "MRS", "LADY", "DAME", "MADAME", "QUEEN", "PRINCESS"]; // "" means no title
+
+    // First name options
+    const firstNames = [
+      "Peaches", "Backroll", "Orgazma", "Sequence", "Felicia", "Kiki", "Summer", "Iona", "Ornacia", "Ivana", "Charity",
+      "Ophelia", "Toxic", "Ida", "Regina", "Alotta", "Mimi",
+      "Frieda", "Tyra", "Bon Qui Qui", "Coco", "Amanda", "Zizi"
+    ];
+  
+    // Last name options
+    const lastNames = [
+      "Rivers", "Lake", "Surprise", "Eleganza", "Goodnight", "Kayne",
+      "Beaverhousen", "Balls", "Summers", "Vision", "Heaux", "CutaB*tch",
+      "Filth", "Tucker", "K.Mart", "Wylde", "Latifah", "O'Plenty",
+      "Bang Bang", "Foxxx", "Caliente", "Bush", "D-Lite", "Alert",
+      "Anaconda", "Diamond"
+    ];
+  
+    // Helper function: pick a random item from an array
+    const random = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  
+    // Randomly select one from each category
+    const title = random(titles);
+    const first = random(firstNames);
+    const last = random(lastNames);
+  
+    // Build the full drag name and remove extra space if no title
+    const name = `${title} ${first} ${last}`.trim();
+  
+    // Display the generated drag name
+    dragNameSpan.textContent = name;
+  
+    // Play a sound effect when name is generated
+    nameDragQueenAudio.play();
+  };
+  //const name = "fdfjdjfod" //on génère le nom alétoirement. ==> SVETLANA, tu peux remplacer cette ligne par ton code.
+  //dragNameSpan.textContent = name //il s'affiche dans la span qui a l'id #drag-name-result.
+  //nameDragQueenAudio.play() // joue le son du flipper.
+//}
 //Au click, on appelle la fonction generateDragName()
 btnDragName.addEventListener("click", generateDragName)
 
