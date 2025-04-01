@@ -33,11 +33,50 @@
   top: 3000px; /* Adjust vertical position */
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+  width: 800px;
+  height: 300px;
+  position: relative;
+}
+.letter.q {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  transform: rotate(-3deg);
+  height: 110px;
 }
 
+.letter.u {
+  position: absolute;
+  top: 0px;
+  left: 110px;
+  transform: rotate(12deg);
+  height: 120px;
+}
+
+.letter.e1 {
+  position: absolute;
+  top: 15px;
+  left: 215px;
+  transform: rotate(-6deg);
+  height: 100px;
+}
+
+.letter.e2 {
+  position: absolute;
+  top: 0px;
+  left: 310px;
+  transform: rotate(9deg);
+  height: 120px;
+}
+
+.letter-swap {
+  position: absolute;
+  top: 10px;
+  left: 415px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(-5deg);
+}
 /* Common style for all letter images */
 .letter,
 .letter-swap img {
