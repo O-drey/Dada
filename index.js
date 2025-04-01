@@ -62,7 +62,7 @@ original.addEventListener('dragstart', (event) => {
   original.style.opacity = '0';
   swap.style.opacity = '1';
 });
-
+// When drag ends, hide N and show R again
 original.addEventListener('dragend', () => {
   original.style.opacity = '1';
   swap.style.opacity = '0';
