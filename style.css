@@ -30,27 +30,29 @@
 /* Main layout for the row of letters */
 .letter-row {
   position: absolute;
-  top: 3000px; /* Adjust vertical position */
-  left: 50%;
+  top: 4100px; /* Adjust vertical position */
+  left: 70%;
   transform: translateX(-50%);
-  width: 800px;
+  width: 1200px;
   height: 300px;
-  position: relative;
 }
 
 /* Common style for all letter images */
 .letter,
 .letter-swap img {
-  height: 100px;
+  height: 200px;
   width: auto;
   position: relative;
 }
 
 /* Container for R → N swap effect */
 .letter-swap {
-  position: relative;
-  height: 100px;
-  width: 100px;
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  top: 10px;
+  left: 450px;     
+  transform: rotate(-5deg);
 }
 
 /* R and N images are stacked on top of each other */
@@ -59,9 +61,27 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100px;
+  height: 150px;
   width: auto;
   transition: opacity 0.3s ease;
+}
+
+.letter.q {
+  left: 0;
+}
+
+.letter.u {
+  left: -180px;
+  top: 20px;
+}
+
+.letter.e1 {
+  left: 110px;  /* ближе к U */
+  top: 20px;
+}
+
+.letter.e2 {
+  left: -120px;
 }
 
 /* Hide N by default */
