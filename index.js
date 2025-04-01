@@ -6,8 +6,7 @@ const dragNameSpan = document.getElementById("drag-name-result")
 //Fonction où le nom drag est généré
 const generateDragName = () => {
     // Possible titles
-    const titles = ["MISS", "MRS", "LADY", "DAME", "MADAME", "QUEEN", "PRINCESS"]; // "" means no title
-
+    const titles = ["MISS", "MRS", "LADY", "DAME", "MADAME", "QUEEN", "PRINCESS"];
     // First name options
     const firstNames = [
       "Peaches", "Backroll", "Orgazma", "Sequence", "Felicia", "Kiki", "Summer", "Iona", "Ornacia", "Ivana", "Charity",
