@@ -51,7 +51,7 @@
   height: 250px;
   width: 250px;
   top: 10px;
-  left: 450px;     
+  left: 470px;     
   transform: rotate(-5deg);
 }
 
@@ -61,7 +61,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 150px;
+  height: 230px;
   width: auto;
   transition: opacity 0.3s ease;
 }
