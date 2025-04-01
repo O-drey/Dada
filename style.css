@@ -30,7 +30,7 @@
 /* Main layout for the row of letters */
 .letter-row {
   position: absolute;
-  top: 2000px; /* Adjust vertical position */
+  top: 3000px; /* Adjust vertical position */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
