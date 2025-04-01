@@ -52,6 +52,22 @@ const dragQueenRiotDiv = document.getElementById("riot")
 const dragQueenRiotAudio = new Audio(
   "./assets/sounds/slogan-manif-drag-queen.mp3"
 )
+// Select the swappable letter container
+const original = document.querySelector('.original');
+const swap = document.querySelector('.swap');
+
+// When drag starts, hide R and show N
+original.addEventListener('dragstart', (event) => {
+  event.dataTransfer.setData('text/plain', 'swap');
+  original.style.opacity = '0';
+  swap.style.opacity = '1';
+});
+
+original.addEventListener('dragend', () => {
+  original.style.opacity = '1';
+  swap.style.opacity = '0';
+});
+
 
 // Au double-clic, l'audio de la manifestation se lance
 dragQueenRiotDiv.addEventListener("dblclick", () => {
