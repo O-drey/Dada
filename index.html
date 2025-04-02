@@ -9,14 +9,43 @@
   </head>
   <body>
     <div id="drag-name">
-      <div style="width: 50%; margin: 0 auto; text-align: center">
+      <img
+        class="lazy-load1"
+        data-src="./assets/imgs/projecteur_droit.png"
+        alt="Projo droit"
+      />
+
+      <img
+        class="lazy-load2"
+        data-src="./assets/imgs/projecteur_gauche.png"
+        alt="Projo gauche"
+      />
+
+      <img
+        class="lazy-load3"
+        data-src="./assets/imgs/Paloma.png"
+        alt="Paloma"
+      />
+
+      <img
+        class="lazy-load4"
+        data-src="./assets/imgs/miroir.png"
+        alt="Miroir"
+      />
+
+      <img
+        class="lazy-load5"
+        data-src="./assets/imgs/alter_ego.png"
+        alt="alter ego"
+      />
+      <div id="generate-drag-name">
         <img
           src="./assets/imgs/drag-name-illu.svg"
           alt=""
           height="100%"
           width="100%"
         />
-        <div style="width: 100%">
+        <div>
           <div id="drag-name-panel">
             <span id="drag-name-result"></span>
           </div>
@@ -55,48 +84,37 @@
         <img src="/assets/imgs/marsha-sylvia-imgs.png" alt="" />
       </div>
     </div>
-    <div
-      id="riot"
-      style="
-        background-image: url('./assets/imgs/riot.png');
-        height: 200vh;
-        background-repeat: no-repeat;
-      "
-    ></div>
-    <div class="letter-row">
-      <img src="./assets/imgs/q-lettre.png" alt="Q" class="letter q">
-      <img src="./assets/imgs/e-lettre.png" alt="E" class="letter e1">
-      <img src="./assets/imgs/u-lettre.png" alt="U" class="letter u">
-      <img src="./assets/imgs/e2-lettre.png" alt="E2" class="letter e2">
+    <div id="riot">
+      <div class="letter-row">
+        <img src="./assets/imgs/q-lettre.png" alt="Q" class="letter q" />
+        <img src="./assets/imgs/e-lettre.png" alt="E" class="letter e1" />
+        <img src="./assets/imgs/u-lettre.png" alt="U" class="letter u" />
+        <img src="./assets/imgs/e2-lettre.png" alt="E2" class="letter e2" />
 
-  <!-- Swappable letter block: shows R by default, swaps to N on drag -->
-      <div class="letter-swap">
-        <img src="./assets/imgs/r-lettre.png" alt="R" class="original" draggable="true">
-        <img src="./assets/imgs/n-lettre.png" alt="N" class="swap">
+        <!-- Swappable letter block: shows R by default, swaps to N on drag -->
+        <div class="letter-swap">
+          <img
+            src="./assets/imgs/r-lettre.png"
+            alt="R"
+            class="original"
+            draggable="true"
+          />
+          <img src="./assets/imgs/n-lettre.png" alt="N" class="swap" />
+        </div>
       </div>
     </div>
-    <div
-      id="forbidden-drag"
-      style="
-        background-image: url('./assets/imgs/forbidden-queens.png');
-        height: 240vh;
-      "
-    ></div>
+    <div id="forbidden-drag"></div>
 
     <div id="party">
       <img src="./assets/imgs/megaphone.png" alt="" />
-      <div
-        class="message-party"
-        style="width: 50%; margin: 0 auto; height: 50%; position: relative"
-      >
-        <div style="display: inline-flex; flex-direction: column">
+      <div class="message-party">
+        <div class="message-content-party">
           <img
             id="party-whith"
             src="./assets/imgs/party-with.svg"
-            style="transform: rotate(5deg)"
             alt=""
           />
-          <div id="joy" style="display: inline-flex">
+          <div id="joy">
             <img src="./assets/imgs/party-joy-j.svg" alt="" />
             <img
               id="party-clock"

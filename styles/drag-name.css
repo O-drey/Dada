@@ -6,6 +6,17 @@
   justify-content: center;
   background-image: url('../assets/imgs/drag-name-bg-2.svg');
   height: 127vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#generate-drag-name{
+  width: 50%; 
+  margin: 0 auto; 
+  text-align: center
+}
+#generate-drag-name img~div {
+  width: 100%
 }
 
 #drag-name-btn{
@@ -32,4 +43,37 @@
   font-size: 28px;
   /* width: 100%; */
   height: 32px;
+  font-family: "Yu Gothic", "Arial";
+  text-align: center;
+}
+
+.lazy-load1{
+position: absolute;
+top: 0px;
+left: 1440px;
+}
+
+.lazy-load2{
+position: absolute;
+top: 0px;
+right: 1440px;
+}
+
+.lazy-load3{
+width: 30%;
+position: absolute;
+right: 1440px;
+top : 600px;
+}
+
+.lazy-load4{
+    width: 20%;
+position: absolute;
+left: 1440px;
+top : 800px;
+}
+
+.lazy-load5{
+justify-content: center;
+top : 100px;
 }

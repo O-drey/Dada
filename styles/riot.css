@@ -1,0 +1,7 @@
+/* RIOT */
+#riot{  
+  background-image: url('../assets/imgs/riot.png');
+  height: 200vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

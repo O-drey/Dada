@@ -1,0 +1,7 @@
+/* FORBIDDEN DRAG */
+#forbidden-drag{
+  background-image: url('../assets/imgs/forbidden-queens.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 240vh;
+}

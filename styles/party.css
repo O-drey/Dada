@@ -25,9 +25,15 @@
   height: 20%;
 }
 
+.message-party{
+  width: 50%; 
+  margin: 0 auto; 
+  height: 50%; 
+  position: relative
+}
 .message-content-party{
-  display: block;
-  text-align: left;
+  display: inline-flex; 
+  flex-direction: column
 }
 
 .message-content-container-img{
@@ -35,6 +41,12 @@
   margin-left: 12px;
 }
 
+#party-whith{
+  transform: rotate(5deg);
+}
+#joy{
+  display: inline-flex;
+}
 
 #party-queens{
   width: 100%;
